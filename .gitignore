@@ -4,6 +4,8 @@
 *.pyc
 __pycache__
 db.sqlite3
+static_collected/
+media/
 
 # Backup files # 
 *.bak 
