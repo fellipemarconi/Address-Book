@@ -1,2 +1,2 @@
-# Agenda
-Projeto em Django com o intuito de desenvolver uma Agenda.
+# Address Book
+Django project to develop an address book
