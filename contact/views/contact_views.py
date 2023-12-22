@@ -16,8 +16,11 @@ def contact(request, contact_id):
         Contact.objects, pk=contact_id, show=True
         )
     
+    contact_name = f'{single_contact.first_name} {single_contact.last_name} - '
+    
     context = {
         'contact': single_contact,
+        'site_title': contact_name,
     }
     
     return render(request, 'contact/contact.html', context)
