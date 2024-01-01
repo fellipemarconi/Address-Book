@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render, get_object_or_404, redirect
 from contact.models import Contact
 from django import forms
@@ -9,6 +10,10 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('first_name', 'last_name', 'phone', 'email')
+        
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        return super().clean()
 
 def create(request):
     if request.method == 'POST':
@@ -20,7 +25,7 @@ def create(request):
         return render(request, 'contact/create.html', context=context)
     
     context = {
-            'form': ContactForm(request.POST),
+            'form': ContactForm(),
         }
     
     return render(request, 'contact/create.html', context=context)
