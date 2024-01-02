@@ -5,6 +5,16 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('first_name', 'last_name', 'phone', 'email')
+        widgets = {
+            'first_name': forms.TextInput(
+                attrs={'placeholder': 'John'}),
+            'last_name': forms.TextInput(
+                attrs={'placeholder': 'Doe'}),
+            'phone': forms.TextInput(
+                attrs={'placeholder': '(555) 234-5678'}),
+            'email': forms.EmailInput(
+                attrs={'placeholder': 'example@example.com'}),
+        }
         
     def clean(self):
         cleaned_data = self.cleaned_data
