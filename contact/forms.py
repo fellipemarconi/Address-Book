@@ -18,6 +18,8 @@ class ContactForm(forms.ModelForm):
                 attrs={'placeholder': '(555) 234-5678'}),
             'email': forms.EmailInput(
                 attrs={'placeholder': 'example@example.com'}),
+            'description': forms.Textarea(
+                attrs={'placeholder': 'Type a description here...'}),
         }
         
     def clean(self):
