@@ -19,7 +19,6 @@ def index(request):
     return render(request, 'contact/index.html', context=context)
 
 def contact(request, contact_id):
-    update_reverse = reverse('contact:update', args=(contact_id,))
     single_contact = get_object_or_404(
         Contact.objects, pk=contact_id, show=True
         )
@@ -29,7 +28,6 @@ def contact(request, contact_id):
     context = {
         'contact': single_contact,
         'site_title': contact_name,
-        'update_reverse': update_reverse,
     }
     
     return render(request, 'contact/contact.html', context)
