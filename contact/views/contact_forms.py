@@ -17,7 +17,7 @@ def create(request):
 
         if form.is_valid():
             contact = form.save()
-            return redirect('contact:update', contact_id=contact.pk)
+            return redirect('contact:contact', contact_id=contact.pk)
                 
         return render(request, 'contact/create.html', context=context)
     
@@ -38,12 +38,12 @@ def update(request, contact_id):
         
         context = {
             'form': form,
-            'form_action': form_action
+            'form_action': form_action,
         }
 
         if form.is_valid():
             contact = form.save()
-            return redirect('contact:update', contact_id=contact.pk)
+            return redirect('contact:contact', contact_id=contact.pk)
                 
         return render(request, 'contact/create.html', context=context)
     
