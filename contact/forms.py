@@ -8,6 +8,7 @@ class ContactForm(forms.ModelForm):
         fields = (
             'first_name', 'last_name', 'phone', 
             'email', 'description', 'category',
+            'picture',
             )
         widgets = {
             'first_name': forms.TextInput(
@@ -20,6 +21,8 @@ class ContactForm(forms.ModelForm):
                 attrs={'placeholder': 'example@example.com'}),
             'description': forms.Textarea(
                 attrs={'placeholder': 'Type a description here...'}),
+            'picture': forms.FileInput(
+                attrs={'accept': 'image/*'}),
         }
         
     def clean(self):
