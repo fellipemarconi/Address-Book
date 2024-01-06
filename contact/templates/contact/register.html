@@ -3,12 +3,11 @@
 {% block content %}
     <div class="form-wrapper">
 
-        <h2>Contact</h2>
+        <h2>Register</h2>
 
         <form 
             action="{{ form_action }}" 
             method="POST" 
-            enctype="multipart/form-data"
         >
         {% csrf_token %}
         <div class="form-content">
@@ -22,9 +21,6 @@
                     <p class="help-text">{{ field.help_text }}</p>
                 {% endif %}
                 </div>
-                {% if field.name == 'picture' and field.value.url %}
-                        <img src="{{ field.value.url }}" alt="">
-                    {% endif %}
             {% endfor %}
         </div>
 

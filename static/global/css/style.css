@@ -292,6 +292,7 @@
     font-size: var(--smaller-font-size);
   }
   
+  
   .btn {
     background-color: var(--link-dark-color);
     color: var(--clr-white);
