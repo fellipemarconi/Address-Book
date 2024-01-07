@@ -54,7 +54,8 @@ def user_update(request):
         
         if form.is_valid():
             form.save()
-            return redirect('contact:user_update')
+            messages.success(request, 'User has been updated')
+            return redirect('contact:login')
     
     context = {
         'form': form,
