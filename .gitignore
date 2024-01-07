@@ -24,6 +24,8 @@ project/local_settings.py
 
 # Generated files
 .idea/**/contentModel.xml
+.dockerignore
+Dockerfile
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
